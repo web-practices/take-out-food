@@ -1,0 +1,27 @@
+{
+  "name": "take-out-food",
+  "version": "1.0.0",
+  "description": "a take out food app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine spec/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/tw-baseline-exam/take-out-food.git"
+  },
+  "keywords": [
+    "take",
+    "out",
+    "food"
+  ],
+  "author": "Jinghua Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/tw-baseline-exam/take-out-food/issues"
+  },
+  "homepage": "https://gitlab.com/tw-baseline-exam/take-out-food#readme",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
+}
