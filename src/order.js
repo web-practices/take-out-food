@@ -19,7 +19,9 @@ class Order {
   }
 
   calTotalPrice() {
-    // Need to be implement
+    return this.itemDetails
+      .map((item) => item.price * item.count)
+      .reduce((a, b) => a + b, 0);
   }
 }
 
