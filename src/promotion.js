@@ -4,8 +4,21 @@ class Promotion {
     this.order = order;
   }
 
+  halfDiscount() {
+    const orderIncludeHalfPriceDishes = this.order.itemsDetails.filter((item) =>
+      this.halfPriceDishes.includes(item.id)
+    );
+    return orderIncludeHalfPriceDishes
+      .map((item) => (item.price * item.count) / 2)
+      .reduce((a, b) => a + b, 0);
+  }
+
+  overDiscount() {
+    return this.order.calTotalPrice() >= 30 ? 6 : 0;
+  }
+
   discount() {
-    // Need to be implement
+    return Math.max(this.halfDiscount(), this.overDiscount());
   }
 }
 
