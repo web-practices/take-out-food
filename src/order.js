@@ -2,11 +2,20 @@ const dishes = require("./menu.js");
 
 class Order {
   constructor(itemsMap) {
-    // Need to be implement
+    this.itemDetails = dishes
+      .filter((item) => itemsMap.has(item.id))
+      .map((ele) => {
+        return {
+          id: ele.id,
+          name: ele.name,
+          price: ele.price,
+          count: itemsMap.get(ele.id)
+        };
+      });
   }
 
   get itemsDetails() {
-    // Need to be implement
+    return this.itemDetails;
   }
 
   calTotalPrice() {
