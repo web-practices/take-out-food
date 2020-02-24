@@ -9,6 +9,10 @@ class Order {
     // Need to be implement
   }
 
+  get originalPrice() {
+    // Need to be implement
+  }
+
   calTotalPrice() {
     // Need to be implement
   }
