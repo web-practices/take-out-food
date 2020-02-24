@@ -20,6 +20,8 @@ describe("Take out food", function() {
   it("should return normal price when input dishes", () => {
     const inputs = new Map([["ITEM0013", 4]]);
     const order = new Order(inputs);
+    const originalPrice = order.originalPrice;
+    expect(24).toEqual(originalPrice);
     const result = order.calTotalPrice();
     expect(24).toEqual(result);
   });
@@ -31,6 +33,8 @@ describe("Take out food", function() {
       ["ITEM0022", 1]
     ]);
     const order = new Order(inputs);
+    const originalPrice = order.originalPrice;
+    expect(38).toEqual(originalPrice);
     const result = order.calTotalPrice();
     expect(25).toEqual(result);
   });
@@ -41,6 +45,8 @@ describe("Take out food", function() {
       ["ITEM0022", 1]
     ]);
     const order = new Order(inputs);
+    const originalPrice = order.originalPrice;
+    expect(31).toEqual(originalPrice);
     const result = order.calTotalPrice();
     expect(26).toEqual(result);
   });

@@ -18,6 +18,10 @@ class Order {
     return this.itemDetails;
   }
 
+  get originalPrice() {
+    // Need to be implement
+  }
+
   calTotalPrice() {
     return this.itemDetails
       .map((item) => item.price * item.count)
