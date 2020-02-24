@@ -14,7 +14,7 @@ class Promotion {
   }
 
   overDiscount() {
-    return this.order.calTotalPrice() >= 30 ? 6 : 0;
+    return this.order.originalPrice >= 30 ? 6 : 0;
   }
 
   discount() {

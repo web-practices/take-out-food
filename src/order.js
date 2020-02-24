@@ -1,4 +1,5 @@
 const dishes = require("./menu.js");
+const Promotion = require("./promotion.js");
 
 class Order {
   constructor(itemsMap) {
@@ -19,13 +20,15 @@ class Order {
   }
 
   get originalPrice() {
-    // Need to be implement
-  }
-
-  calTotalPrice() {
     return this.itemDetails
       .map((item) => item.price * item.count)
       .reduce((a, b) => a + b, 0);
+  }
+
+  calTotalPrice() {
+    const promotion = new Promotion(this);
+    const discount = promotion.discount();
+    return this.originalPrice - discount;
   }
 }
 
