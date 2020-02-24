@@ -46,7 +46,7 @@ describe("Take out food", function() {
     ]);
     const order = new Order(inputs);
     const originalPrice = order.originalPrice;
-    expect(31).toEqual(originalPrice);
+    expect(32).toEqual(originalPrice);
     const result = order.calTotalPrice();
     expect(26).toEqual(result);
   });
