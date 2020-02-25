@@ -7,7 +7,8 @@ function bestCharge(selectedItems) {
   const itemsMap = tools.parseInputToMap(selectedItems);
   const order = new Order(itemsMap);
   const report = new Report(order);
-  report.print();
+  const printStr = report.print();
+  console.log(printStr);
 }
 
 const rl = readline.createInterface({
