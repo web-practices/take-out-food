@@ -2,9 +2,10 @@
   "name": "take-out-food",
   "version": "1.0.0",
   "description": "a take out food app",
-  "main": "index.js",
+  "main": "best-charge.js",
   "scripts": {
-    "test": "jasmine spec/*.js"
+    "test": "jasmine spec/*.js",
+    "start": "node best-charge.js"
   },
   "repository": {
     "type": "git",
