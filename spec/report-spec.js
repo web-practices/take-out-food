@@ -21,7 +21,7 @@ describe("Take out food", function() {
       指定菜品半价(黄焖鸡，凉皮)，省13元
       -----------------------------------
       总计：25元
-      ===================================`.trim();
+      ===================================`;
     expect(expected).toEqual(result);
   });
   it("should generate order string is that discount 6￥ over 30￥", function() {
@@ -41,7 +41,7 @@ describe("Take out food", function() {
       满30减6元，省6元
       -----------------------------------
       总计：26元
-      ===================================`.trim();
+      ===================================`;
     expect(expected).toEqual(result);
   });
   it("should generate order string when no promotion can be used", function() {
@@ -54,7 +54,7 @@ describe("Take out food", function() {
       肉夹馍 x 4 = 24元
       -----------------------------------
       总计：24元
-      ===================================`.trim();
+      ===================================`;
     expect(expected).toEqual(result);
   });
 });
