@@ -1,5 +1,5 @@
 const dishes = require("./menu.js");
-const Promotion = require("./promotion.js");
+const BestPromotion = require("./promotion/best-promotion.js");
 
 class Order {
   constructor(itemsMap) {
@@ -26,8 +26,8 @@ class Order {
   }
 
   calTotalPrice() {
-    const promotion = new Promotion(this);
-    const discount = promotion.discount();
+    const promotion = new BestPromotion(this);
+    const discount = promotion.getBestPromotion().amount;
     return this.originalPrice - discount;
   }
 }
