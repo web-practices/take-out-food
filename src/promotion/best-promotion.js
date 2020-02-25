@@ -17,7 +17,7 @@ class BestPromotion {
         return {
           type: this.halfPricePromotion.type,
           amount: halfDiscount,
-          halfDishes: halfPricePromotion.includedHalfPriceDishes()
+          halfDishes: this.halfPricePromotion.includedHalfPriceDishes()
         };
       } else {
         return {
