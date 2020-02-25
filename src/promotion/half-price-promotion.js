@@ -12,15 +12,11 @@ class HalfPricePromotion extends Promotion {
   }
 
   includedHalfPriceDishes() {
-    return this.order.itemDetails.filter((item) =>
-      this.halfPriceDishes.includes(item.id)
-    );
+    // need to be completed
   }
 
   discount() {
-    return this.includedHalfPriceDishes()
-      .map((item) => (item.price * item.count) / 2)
-      .reduce((a, b) => a + b, 0);
+    // need to be completed
   }
 }
 
