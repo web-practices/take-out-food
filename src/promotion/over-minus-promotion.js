@@ -11,7 +11,7 @@ class OverMinusPromotion extends Promotion {
   }
 
   discount() {
-    return this.order.originalPrice >= 30 ? 6 : 0;
+    // Need to be implemented
   }
 }
 
