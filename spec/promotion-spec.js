@@ -20,7 +20,7 @@ describe("Take out food", function() {
     const bestPromotion = new BestPromotion(order).getBestPromotion();
     expect(13).toEqual(bestPromotion.amount);
     expect("指定菜品半价").toEqual(bestPromotion.type);
-    expect(2).toEqual(bestPromotion.halfDishes);
+    expect(2).toEqual(bestPromotion.halfDishes.length);
   });
 
   it("should return discout price that over 30￥ minus 6￥ when input dishes", () => {
