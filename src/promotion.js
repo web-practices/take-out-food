@@ -27,7 +27,18 @@ class Promotion {
   }
 
   discount() {
-    return Math.max(this.halfDiscount(), this.overDiscount());
+    const halfDiscount = this.halfDiscount();
+    const overDiscount = this.overDiscount();
+    if (halfDiscount == 0 || overDiscount == 0) {
+      return 0;
+    }
+    if (halfDiscount >= overDiscount) {
+      this.promotionType = "指定菜品半价";
+      return halfDiscount;
+    } else {
+      this.promotionType = "满30减6元";
+      return overDiscount;
+    }
   }
 }
 
