@@ -44,7 +44,8 @@ class Report {
 
   print() {
     return (
-      `============= 订餐明细 =============
+      `
+      ============= 订餐明细 =============
       ${this.getItemDetailStr()}
       -----------------------------------` +
       this.getPromotionStr() +
