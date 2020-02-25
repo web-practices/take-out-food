@@ -13,6 +13,7 @@ class Order {
           count: itemsMap.get(ele.id)
         };
       });
+    this._promotion = new BestPromotion(this).getBestPromotion();
   }
 
   get itemsDetails() {
@@ -25,10 +26,12 @@ class Order {
       .reduce((a, b) => a + b, 0);
   }
 
+  get promotion() {
+    return this._promotion;
+  }
+
   calTotalPrice() {
-    const promotion = new BestPromotion(this);
-    const discount = promotion.getBestPromotion().amount;
-    return this.originalPrice - discount;
+    return this.originalPrice - this._promotion.amount;
   }
 }
 
