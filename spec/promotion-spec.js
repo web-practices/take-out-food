@@ -8,6 +8,7 @@ describe("Take out food", function() {
     const promotion = new Promotion(order);
     const result = promotion.discount();
     expect(0).toEqual(result);
+    expect(null).toEqual(promotion.promotionType);
   });
 
   it("should return discout price that half price of specific dishes when input dishes", () => {
@@ -20,6 +21,7 @@ describe("Take out food", function() {
     const promotion = new Promotion(order);
     const result = promotion.discount();
     expect(13).toEqual(result);
+    expect("指定菜品半价").toEqual(promotion.promotionType);
   });
 
   it("should return discout price that over 30￥ minus 6￥ when input dishes", () => {
@@ -31,5 +33,6 @@ describe("Take out food", function() {
     const promotion = new Promotion(order);
     const result = promotion.discount();
     expect(6).toEqual(result);
+    expect("满30减6元").toEqual(promotion.promotionType);
   });
 });
