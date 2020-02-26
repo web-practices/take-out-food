@@ -1,4 +1,7 @@
 const BestPromotion = require("../src/promotion/best-promotion.js");
+const Promotion = require("../src/promotion/promotion.js");
+const HalfPricePromotion = require("../src/promotion/half-price-promotion.js");
+const OverMinusPromotion = require("../src/promotion/over-minus-promotion.js");
 const Order = require("../src/order.js");
 
 describe("Take out food", function() {
@@ -6,7 +9,11 @@ describe("Take out food", function() {
     const inputs = new Map([["ITEM0013", 4]]);
     const order = new Order(inputs);
     const bestPromotion = new BestPromotion(order).getBestPromotion();
-    expect(0).toEqual(bestPromotion.amount);
+    expect(true).toEqual(bestPromotion instanceof Promotion);
+    expect(false).toEqual(bestPromotion instanceof HalfPricePromotion);
+    expect(false).toEqual(bestPromotion instanceof OverMinusPromotion);
+    expect(0).toEqual(bestPromotion.discount());
+    expect(0).toEqual(bestPromotion.totalPrice());
     expect(null).toEqual(bestPromotion.type);
   });
 
@@ -18,9 +25,13 @@ describe("Take out food", function() {
     ]);
     const order = new Order(inputs);
     const bestPromotion = new BestPromotion(order).getBestPromotion();
-    expect(13).toEqual(bestPromotion.amount);
+    expect(true).toEqual(bestPromotion instanceof Promotion);
+    expect(true).toEqual(bestPromotion instanceof HalfPricePromotion);
+    expect(false).toEqual(bestPromotion instanceof OverMinusPromotion);
+    expect(13).toEqual(bestPromotion.discount());
+    expect(25).toEqual(bestPromotion.totalPrice());
     expect("指定菜品半价").toEqual(bestPromotion.type);
-    expect(2).toEqual(bestPromotion.halfDishes.length);
+    expect(2).toEqual(bestPromotion.includedHalfPriceDishes().length);
   });
 
   it("should return discout price that over 30￥ minus 6￥ when input dishes", () => {
@@ -28,9 +39,11 @@ describe("Take out food", function() {
       ["ITEM0013", 4],
       ["ITEM0022", 1]
     ]);
-    const order = new Order(inputs);
-    const bestPromotion = new BestPromotion(order).getBestPromotion();
-    expect(6).toEqual(bestPromotion.amount);
-    expect("满30减6元").toEqual(bestPromotion.type);
+    expect(true).toEqual(bestPromotion instanceof Promotion);
+    expect(false).toEqual(bestPromotion instanceof HalfPricePromotion);
+    expect(true).toEqual(bestPromotion instanceof OverMinusPromotion);
+    expect(6).toEqual(bestPromotion.discount());
+    expect(32).toEqual(bestPromotion.totalPrice());
+    expect("指定菜品半价").toEqual(bestPromotion.type);
   });
 });
