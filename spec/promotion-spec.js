@@ -13,7 +13,7 @@ describe("Take out food", function() {
     expect(false).toEqual(bestPromotion instanceof HalfPricePromotion);
     expect(false).toEqual(bestPromotion instanceof OverMinusPromotion);
     expect(0).toEqual(bestPromotion.discount());
-    expect(0).toEqual(bestPromotion.totalPrice());
+    expect(24).toEqual(bestPromotion.totalPrice());
     expect(null).toEqual(bestPromotion.type);
   });
 
@@ -39,11 +39,13 @@ describe("Take out food", function() {
       ["ITEM0013", 4],
       ["ITEM0022", 1]
     ]);
+    const order = new Order(inputs);
+    const bestPromotion = new BestPromotion(order).getBestPromotion();
     expect(true).toEqual(bestPromotion instanceof Promotion);
     expect(false).toEqual(bestPromotion instanceof HalfPricePromotion);
     expect(true).toEqual(bestPromotion instanceof OverMinusPromotion);
     expect(6).toEqual(bestPromotion.discount());
-    expect(32).toEqual(bestPromotion.totalPrice());
+    expect(26).toEqual(bestPromotion.totalPrice());
     expect("指定菜品半价").toEqual(bestPromotion.type);
   });
 });
