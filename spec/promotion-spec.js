@@ -46,6 +46,6 @@ describe("Take out food", function() {
     expect(true).toEqual(bestPromotion instanceof OverMinusPromotion);
     expect(6).toEqual(bestPromotion.discount());
     expect(26).toEqual(bestPromotion.totalPrice());
-    expect("指定菜品半价").toEqual(bestPromotion.type);
+    expect("满30减6元").toEqual(bestPromotion.type);
   });
 });
