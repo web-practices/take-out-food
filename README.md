@@ -82,3 +82,148 @@ ITEM0013 x 4
 总计：24元
 ===================================
 ```
+
+
+
+## 项目说明：
+
+#### 1. 文件及文件夹说明：
+
+* **spec:** 该文件夹为测试所在文件夹，里面包含了项目的所有单元测试的文件。
+* **SRC：** 该文件为源码所在文件，里面是外卖小程序的所有源代码。
+* **best-charge.js: ** 该文件为外卖小程序的入口文件。
+* **requirement.md: **  该文件提供了为完成该程序所需要的所有知识点以及相关学习资料。
+* **package.json: ** 包含该项目的一些说明，依赖的资源库和运行该程序的命令等。
+
+#### 2. 分支说明：
+
+* **master: ** 该分支为未实现分支，主要包括了所有测试和部分已实现的脚手架代码，您需要基于此分支进行开发。
+* **answer: ** 该分支已经实现外卖小程序，源代码全部包含在src文件夹中，如果您在master分支上面实现功能时遇到了困难，您可以切换到该分支上面进行参考。
+
+
+
+## 你该怎么做？
+
+#### Step 1： 将该项目Clone到您的本地。
+
+```bash
+git clone https://gitlab.com/tw-baseline-exam/take-out-food.git
+```
+
+#### Step 2：安装[Node.js](https://nodejs.org/en/)
+
+该小程序是JS为编程语言编写，依赖于node运行环境，所以需要您在本地安装好Node。下载并安装Node请[参考这里](https://nodejs.org/en/download/)
+
+#### Step 3：全局安装[Jasmine.js](https://www.npmjs.com/package/jasmine)
+
+Jasmine是本应用程序依赖的测试框架，在项目根目录下面运行此命令即可安装：
+
+```bash
+npm install -g jasmine
+```
+
+#### Step 4:  安装本项目的其他依赖：
+
+在项目根目录下面运行此命令，可以安装本项目的其他依赖库：
+
+```bash
+npm install
+```
+
+#### Step 5:  验证环境准备是否完成：
+
+首先切换到answer分支，运行下面的命令：
+
+```bash
+npm test
+```
+
+如果输出下面的信息，表示您已经准备好所有开发环境了：
+
+```bash
+> jasmine spec/*.js
+
+Randomized with seed 85536
+Started
+...........
+
+11 specs, 0 failures
+Finished in 0.019 seconds
+Randomized with seed 85536 (jasmine --random=true --seed=85536)
+```
+
+
+
+## 其他说明：
+
+#### 1. 如何运行本项目的测试？
+
+* **运行该项目所有测试：**
+
+  ```bash
+  npm test
+  ```
+
+* **运行单个文件测试：**
+
+  ```bash
+  jasmine spec/文件名称.js
+  例如：jasmine spec/order-spec.js
+  ```
+
+#### 2. 完成该程序的顺序是什么？从哪里下手？
+
+以我个人的经验，我推荐您以下面的顺序逐个完成(主要完成加了注释`Need to be implement`的部分)，完成一个文件后，运行该文件的测试，使得测试逐个通过：
+
+* **src/tools.js**
+* **src/order.js**
+* **src/promotion/half-price-promotion.js**
+* **src/promotion/over-minus-promotion.js**
+
+完成所有实现后，记得运行所有测试哦！
+
+####  3. 如何运行该项目？
+
+执行下面的命令：
+
+```bash
+npm start
+```
+
+出现以下待输入请求：
+
+```bash
+> node best-charge.js
+
+欢迎使用思沃外卖小程序！请输入您需要的菜品及数量：
+```
+
+输入下面的任意一种：
+
+* ITEM0001 x 1,ITEM0013 x 2,ITEM0022 x 1
+* ITEM0013 x 4,ITEM0022 x 1
+* ITEM0013 x 4
+
+则输出：
+
+```bash
+> node best-charge.js
+
+欢迎使用思沃外卖小程序！请输入您需要的菜品及数量：ITEM0001 x 1,ITEM0013 x 2,ITEM0022 x 1
+
+      ============= 订餐明细 =============
+      黄焖鸡 x 1 = 18元
+      肉夹馍 x 2 = 12元
+      凉皮 x 1 = 8元
+      -----------------------------------
+      使用优惠:
+      指定菜品半价(黄焖鸡，凉皮)，省13元
+      -----------------------------------
+      总计：25元
+      ===================================
+```
+
+#### 4. 如果自己还不具备完成该程序的知识，哪里可以学习？
+
+由于学员水平不一，如果您觉得自己能够完成所有的功能，那就最好了，直接开干就行了！如果您发现自己有些代码看不明白或者是某个知识点不清楚，您可以以[**requirement.md**](https://gitlab.com/tw-baseline-exam/take-out-food/-/blob/master/requirement.md)列举的知识点和材料进行学习，加油哦！
+
