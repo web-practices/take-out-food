@@ -31,9 +31,11 @@
 * [JavaScript Array Methods](https://www.w3schools.com/js/js_array_methods.asp)
 * [JavaScript Array Iteration Methods](https://www.w3schools.com/js/js_array_iteration.asp)
 
-##### 5. 类和继承
+##### 5. ES6新语法
 
 * [JavaScript Classes](https://www.w3schools.com/js/js_classes.asp)
+* [Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+* [Template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
 
 
