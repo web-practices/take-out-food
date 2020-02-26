@@ -152,3 +152,78 @@ Finished in 0.019 seconds
 Randomized with seed 85536 (jasmine --random=true --seed=85536)
 ```
 
+
+
+## 其他说明：
+
+#### 1. 如何运行本项目的测试？
+
+* **运行该项目所有测试：**
+
+  ```bash
+  npm test
+  ```
+
+* **运行单个文件测试：**
+
+  ```bash
+  jasmine spec/文件名称.js
+  例如：jasmine spec/order-spec.js
+  ```
+
+#### 2. 完成该程序的顺序是什么？从哪里下手？
+
+以我个人的经验，我推荐您以下面的顺序逐个完成(主要完成加了注释`Need to be implement`的部分)，完成一个文件后，运行该文件的测试，使得测试逐个通过：
+
+* **src/tools.js**
+* **src/order.js**
+* **src/promotion/half-price-promotion.js**
+* **src/promotion/over-minus-promotion.js**
+
+完成所有实现后，记得运行所有测试哦！
+
+####  3. 如何运行该项目？
+
+执行下面的命令：
+
+```bash
+npm start
+```
+
+出现以下待输入请求：
+
+```bash
+> node best-charge.js
+
+欢迎使用思沃外卖小程序！请输入您需要的菜品及数量：
+```
+
+输入下面的任意一种：
+
+* ITEM0001 x 1,ITEM0013 x 2,ITEM0022 x 1
+* ITEM0013 x 4,ITEM0022 x 1
+* ITEM0013 x 4
+
+则输出：
+
+```bash
+> node best-charge.js
+
+欢迎使用思沃外卖小程序！请输入您需要的菜品及数量：ITEM0001 x 1,ITEM0013 x 2,ITEM0022 x 1
+
+      ============= 订餐明细 =============
+      黄焖鸡 x 1 = 18元
+      肉夹馍 x 2 = 12元
+      凉皮 x 1 = 8元
+      -----------------------------------
+      使用优惠:
+      指定菜品半价(黄焖鸡，凉皮)，省13元
+      -----------------------------------
+      总计：25元
+      ===================================
+```
+
+#### 4. 如果自己还不具备完成该程序的知识，哪里可以学习？
+
+由于学员水平不一，如果您觉得自己能够完成所有的功能，那就最好了，直接开干就行了！如果您发现自己有些代码看不明白或者是某个知识点不清楚，您可以以[**requirement.md**](https://gitlab.com/tw-baseline-exam/take-out-food/-/blob/master/requirement.md)列举的知识点和材料进行学习，加油哦！
+
