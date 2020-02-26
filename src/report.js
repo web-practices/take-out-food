@@ -1,6 +1,10 @@
+const BestPromotion = require("./promotion/best-promotion.js");
+const HalfPricePromotion = require("./promotion/half-price-promotion.js");
+
 class Report {
   constructor(order) {
     this.order = order;
+    this.bestPromotion = new BestPromotion(order).getBestPromotion();
   }
 
   getItemDetailStr() {
@@ -22,23 +26,25 @@ class Report {
   }
 
   getPromotionStr() {
-    if (this.order.promotion.type == null) {
+    if (this.bestPromotion.type == null) {
       return "";
     }
     let halfPromtionDishes = "";
-    if (
-      this.order.promotion.halfDishes &&
-      this.order.promotion.halfDishes.length > 0
-    ) {
+    if (this.bestPromotion instanceof HalfPricePromotion) {
       halfPromtionDishes =
         "(" +
-        this.order.promotion.halfDishes.map((item) => item.name).join("，") +
+        this.bestPromotion
+          .includedHalfPriceDishes()
+          .map((item) => item.name)
+          .join("，") +
         ")";
     }
 
     return `
       使用优惠:
-      ${this.order.promotion.type}${halfPromtionDishes}，省${this.order.promotion.amount}元
+      ${
+        this.bestPromotion.type
+      }${halfPromtionDishes}，省${this.bestPromotion.discount()}元
       -----------------------------------`;
   }
 
@@ -50,7 +56,7 @@ class Report {
       -----------------------------------` +
       this.getPromotionStr() +
       `
-      总计：${this.order.calTotalPrice()}元
+      总计：${this.bestPromotion.totalPrice()}元
       ===================================`
     );
   }
