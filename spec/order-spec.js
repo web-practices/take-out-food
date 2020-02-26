@@ -20,10 +20,8 @@ describe("Take out food", function() {
   it("should return normal price when input dishes", () => {
     const inputs = new Map([["ITEM0013", 4]]);
     const order = new Order(inputs);
-    const originalPrice = order.originalPrice;
-    expect(24).toEqual(originalPrice);
-    const result = order.calTotalPrice();
-    expect(24).toEqual(result);
+    const totalPrice = order.totalPrice;
+    expect(24).toEqual(totalPrice);
   });
 
   it("should return discout price that half price of specific dishes when input dishes", () => {
@@ -33,10 +31,8 @@ describe("Take out food", function() {
       ["ITEM0022", 1]
     ]);
     const order = new Order(inputs);
-    const originalPrice = order.originalPrice;
-    expect(38).toEqual(originalPrice);
-    const result = order.calTotalPrice();
-    expect(25).toEqual(result);
+    const totalPrice = order.totalPrice;
+    expect(38).toEqual(totalPrice);
   });
 
   it("should return discout price that over 30￥ minus 6￥ when input dishes", () => {
@@ -45,9 +41,7 @@ describe("Take out food", function() {
       ["ITEM0022", 1]
     ]);
     const order = new Order(inputs);
-    const originalPrice = order.originalPrice;
-    expect(32).toEqual(originalPrice);
-    const result = order.calTotalPrice();
-    expect(26).toEqual(result);
+    const totalPrice = order.totalPrice;
+    expect(32).toEqual(totalPrice);
   });
 });

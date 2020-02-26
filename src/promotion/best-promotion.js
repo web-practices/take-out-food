@@ -12,25 +12,13 @@ class BestPromotion {
   getBestPromotion() {
     const halfDiscount = this.halfPricePromotion.discount();
     const overDiscount = this.overMinusPromotion.discount();
-    if (halfDiscount > 0 && overDiscount > 0) {
-      if (halfDiscount >= overDiscount) {
-        return {
-          type: this.halfPricePromotion.type,
-          amount: halfDiscount,
-          halfDishes: this.halfPricePromotion.includedHalfPriceDishes()
-        };
-      } else {
-        return {
-          type: this.overMinusPromotion.type,
-          amount: overDiscount
-        };
-      }
+    if (halfDiscount == 0 && overDiscount == 0) {
+      return this.promotion;
     }
 
-    return {
-      type: this.promotion.type,
-      amount: this.promotion.discount()
-    };
+    return halfDiscount >= overDiscount
+      ? this.halfPricePromotion
+      : this.overMinusPromotion;
   }
 }
 

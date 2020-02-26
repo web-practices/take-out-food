@@ -11,6 +11,14 @@ class Promotion {
   discount() {
     return 0;
   }
+
+  originalPrice() {
+    return this.order.totalPrice;
+  }
+
+  totalPrice() {
+    return this.originalPrice() - this.discount();
+  }
 }
 
 module.exports = Promotion;
