@@ -1,5 +1,4 @@
 function parseInputToMap(selectedItems) {
-  // need to be implement
   return new Map(
     selectedItems.split(",").map((item) => {
       let matchs = item.split(" x ");
