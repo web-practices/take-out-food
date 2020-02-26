@@ -100,3 +100,55 @@ ITEM0013 x 4
 * **master: ** 该分支为未实现分支，主要包括了所有测试和部分已实现的脚手架代码，您需要基于此分支进行开发。
 * **answer: ** 该分支已经实现外卖小程序，源代码全部包含在src文件夹中，如果您在master分支上面实现功能时遇到了困难，您可以切换到该分支上面进行参考。
 
+
+
+## 你该怎么做？
+
+#### Step 1： 将该项目Clone到您的本地。
+
+```bash
+git clone https://gitlab.com/tw-baseline-exam/take-out-food.git
+```
+
+#### Step 2：安装[Node.js](https://nodejs.org/en/)
+
+该小程序是JS为编程语言编写，依赖于node运行环境，所以需要您在本地安装好Node。下载并安装Node请[参考这里](https://nodejs.org/en/download/)
+
+#### Step 3：全局安装[Jasmine.js](https://www.npmjs.com/package/jasmine)
+
+Jasmine是本应用程序依赖的测试框架，在项目根目录下面运行此命令即可安装：
+
+```bash
+npm install -g jasmine
+```
+
+#### Step 4:  安装本项目的其他依赖：
+
+在项目根目录下面运行此命令，可以安装本项目的其他依赖库：
+
+```bash
+npm install
+```
+
+#### Step 5:  验证环境准备是否完成：
+
+首先切换到answer分支，运行下面的命令：
+
+```bash
+npm test
+```
+
+如果输出下面的信息，表示您已经准备好所有开发环境了：
+
+```bash
+> jasmine spec/*.js
+
+Randomized with seed 85536
+Started
+...........
+
+11 specs, 0 failures
+Finished in 0.019 seconds
+Randomized with seed 85536 (jasmine --random=true --seed=85536)
+```
+
