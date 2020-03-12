@@ -89,16 +89,17 @@ ITEM0013 x 4
 
 #### 1. 文件及文件夹说明：
 
-* **spec:** 该文件夹为测试所在文件夹，里面包含了项目的所有单元测试的文件。
-* **SRC：** 该文件为源码所在文件，里面是外卖小程序的所有源代码。
-* **best-charge.js: ** 该文件为外卖小程序的入口文件。
-* **requirement.md: **  该文件提供了为完成该程序所需要的所有知识点以及相关学习资料。
-* **package.json: ** 包含该项目的一些说明，依赖的资源库和运行该程序的命令等。
+* **test:** 该文件夹为测试所在文件夹，里面包含了项目的所有单元测试的文件。
+* **src：** 该文件为源码所在文件，里面是外卖小程序的所有源代码。
+* **best-charge.js:**  该文件为外卖小程序的入口文件。
+* **requirement.md:**   该文件提供了为完成该程序所需要的所有知识点以及相关学习资料。
+* **package.json:**  包含该项目的一些说明，依赖的资源库和运行该程序的命令等。
 
 #### 2. 分支说明：
 
-* **master: ** 该分支为未实现分支，主要包括了所有测试和部分已实现的脚手架代码，您需要基于此分支进行开发。
-* **answer: ** 该分支已经实现外卖小程序，源代码全部包含在src文件夹中，如果您在master分支上面实现功能时遇到了困难，您可以切换到该分支上面进行参考。
+* **master:**  该分支为未实现分支，主要包括了所有测试和部分已实现的脚手架代码，您需要基于此分支进行开发。
+* **answer:**  该分支已经实现外卖小程序，源代码全部包含在src文件夹中，如果您在master分支上面实现功能时遇到了困难，您可以切换到该分支上面进行参考。
+说明：最初给大家的版本不会有answer分支，等大家完成后，我们会开放answer分支。
 
 
 
@@ -114,12 +115,12 @@ git clone https://gitlab.com/tw-baseline-exam/take-out-food.git
 
 该小程序是JS为编程语言编写，依赖于node运行环境，所以需要您在本地安装好Node。下载并安装Node请[参考这里](https://nodejs.org/en/download/)
 
-#### Step 3：全局安装[Jasmine.js](https://www.npmjs.com/package/jasmine)
+#### Step 3：全局安装[Jest.js](https://jestjs.io/en/)
 
-Jasmine是本应用程序依赖的测试框架，在项目根目录下面运行此命令即可安装：
+Jast是本应用程序依赖的测试框架，在项目根目录下面运行此命令即可安装：
 
 ```bash
-npm install -g jasmine
+npm install -g Jest
 ```
 
 #### Step 4:  安装本项目的其他依赖：
@@ -130,29 +131,7 @@ npm install -g jasmine
 npm install
 ```
 
-#### Step 5:  验证环境准备是否完成：
-
-首先切换到answer分支，运行下面的命令：
-
-```bash
-npm test
-```
-
-如果输出下面的信息，表示您已经准备好所有开发环境了：
-
-```bash
-> jasmine spec/*.js
-
-Randomized with seed 85536
-Started
-...........
-
-11 specs, 0 failures
-Finished in 0.019 seconds
-Randomized with seed 85536 (jasmine --random=true --seed=85536)
-```
-
-
+#### Step 5:  逐个实现测试，最终使其全部通过
 
 ## 其他说明：
 
@@ -167,8 +146,8 @@ Randomized with seed 85536 (jasmine --random=true --seed=85536)
 * **运行单个文件测试：**
 
   ```bash
-  jasmine spec/文件名称.js
-  例如：jasmine spec/order-spec.js
+  jest test/文件名称.js
+  例如：jest test/order.test.js
   ```
 
 #### 2. 完成该程序的顺序是什么？从哪里下手？
