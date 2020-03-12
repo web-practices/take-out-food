@@ -1,8 +1,8 @@
-const BestPromotion = require("../src/promotion/best-promotion.js");
-const Promotion = require("../src/promotion/promotion.js");
-const HalfPricePromotion = require("../src/promotion/half-price-promotion.js");
-const OverMinusPromotion = require("../src/promotion/over-minus-promotion.js");
-const Order = require("../src/order.js");
+import BestPromotion from "../src/promotion/best-promotion.js";
+import Promotion from "../src/promotion/promotion.js";
+import HalfPricePromotion from "../src/promotion/half-price-promotion.js";
+import OverMinusPromotion from "../src/promotion/over-minus-promotion.js";
+import Order from "../src/order.js";
 
 describe("Take out food", function() {
   it("should discout 0￥ when input dishes", () => {

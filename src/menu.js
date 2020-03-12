@@ -21,4 +21,4 @@ const dishes = [
   }
 ];
 
-module.exports = dishes;
+export default dishes;

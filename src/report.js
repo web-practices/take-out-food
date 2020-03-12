@@ -1,5 +1,5 @@
-const BestPromotion = require("./promotion/best-promotion.js");
-const HalfPricePromotion = require("./promotion/half-price-promotion.js");
+import BestPromotion from "./promotion/best-promotion.js";
+import HalfPricePromotion from "./promotion/half-price-promotion.js";
 
 class Report {
   constructor(order) {
@@ -62,4 +62,4 @@ class Report {
   }
 }
 
-module.exports = Report;
+export default Report;

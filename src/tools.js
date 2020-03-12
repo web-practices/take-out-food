@@ -8,4 +8,4 @@ function parseInputToMap(selectedItems) {
   );
 }
 
-module.exports = { parseInputToMap };
+export { parseInputToMap };
