@@ -1,5 +1,5 @@
-const Report = require("../src/report.js");
-const Order = require("../src/order.js");
+import Report from "../src/report.js";
+import Order from "../src/order.js";
 
 describe("Take out food", function() {
   it("should generate order string that half price of specific dishes", function() {

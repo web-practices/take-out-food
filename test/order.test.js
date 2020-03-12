@@ -1,4 +1,4 @@
-const Order = require("../src/order.js");
+import Order from "../src/order.js";
 
 describe("Take out food", function() {
   it("should return a array of items when input specific dishes", () => {

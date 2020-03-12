@@ -21,4 +21,4 @@ class Promotion {
   }
 }
 
-module.exports = Promotion;
+export default Promotion;

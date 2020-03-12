@@ -1,4 +1,4 @@
-const Promotion = require("./promotion.js");
+import Promotion from "./promotion.js";
 
 class OverMinusPromotion extends Promotion {
   constructor(order) {
@@ -15,4 +15,4 @@ class OverMinusPromotion extends Promotion {
   }
 }
 
-module.exports = OverMinusPromotion;
+export default OverMinusPromotion;

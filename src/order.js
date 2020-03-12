@@ -1,4 +1,4 @@
-const dishes = require("./menu.js");
+import dishes from "./menu.js";
 
 class Order {
   constructor(itemsMap) {
@@ -14,4 +14,4 @@ class Order {
   }
 }
 
-module.exports = Order;
+export default Order;
