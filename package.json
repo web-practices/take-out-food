@@ -4,7 +4,7 @@
   "description": "a take out food app",
   "main": "best-charge.js",
   "scripts": {
-    "test": "jasmine spec/*.js",
+    "test": "jest",
     "start": "node best-charge.js"
   },
   "repository": {
@@ -22,7 +22,12 @@
     "url": "https://gitlab.com/tw-baseline-exam/take-out-food/issues"
   },
   "homepage": "https://gitlab.com/tw-baseline-exam/take-out-food#readme",
-  "devDependencies": {
-    "jasmine": "^3.5.0"
+  "dependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/register": "^7.8.6",
+    "jest": "^25.1.0",
+    "babel-jest": "^25.1.0",
+    "@types/jest": "^25.1.3"
   }
 }
