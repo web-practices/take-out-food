@@ -1,4 +1,4 @@
-import dishes from "./menu.js";
+import dishes from './menu.js';
 
 class Order {
   constructor(itemsMap) {
