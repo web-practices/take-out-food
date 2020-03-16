@@ -1,5 +1,5 @@
-import BestPromotion from "./promotion/best-promotion.js";
-import HalfPricePromotion from "./promotion/half-price-promotion.js";
+import BestPromotion from './promotion/best-promotion.js';
+import HalfPricePromotion from './promotion/half-price-promotion.js';
 
 class Report {
   constructor(order) {
@@ -13,31 +13,31 @@ class Report {
         (item) =>
           `` +
           item.name +
-          " x " +
+          ' x ' +
           item.count +
-          " = " +
+          ' = ' +
           item.count * item.price +
-          "元" +
+          '元' +
           `
       `
       )
-      .join("")
+      .join('')
       .trim();
   }
 
   getPromotionStr() {
     if (this.bestPromotion.type == null) {
-      return "";
+      return '';
     }
-    let halfPromtionDishes = "";
+    let halfPromtionDishes = '';
     if (this.bestPromotion instanceof HalfPricePromotion) {
       halfPromtionDishes =
-        "(" +
+        '(' +
         this.bestPromotion
           .includedHalfPriceDishes()
           .map((item) => item.name)
-          .join("，") +
-        ")";
+          .join('，') +
+        ')';
     }
 
     return `

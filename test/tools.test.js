@@ -1,14 +1,14 @@
-import { parseInputToMap } from "../src/tools.js";
+import { parseInputToMap } from '../src/tools.js';
 
-describe("Take out food", function() {
-  it("should return a map of items when parse input string", () => {
-    let inputs = "ITEM0001 x 1,ITEM0013 x 2,ITEM0022 x 1";
-    let result = parseInputToMap(inputs);
+describe('Take out food', () => {
+  it('should return a map of items when parse input string', () => {
+    const inputs = 'ITEM0001 x 1,ITEM0013 x 2,ITEM0022 x 1';
+    const result = parseInputToMap(inputs);
     expect(result).toEqual(
       new Map([
-        ["ITEM0001", 1],
-        ["ITEM0013", 2],
-        ["ITEM0022", 1]
+        ['ITEM0001', 1],
+        ['ITEM0013', 2],
+        ['ITEM0022', 1]
       ])
     );
   });

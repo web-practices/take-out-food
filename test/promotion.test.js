@@ -1,12 +1,12 @@
-import BestPromotion from "../src/promotion/best-promotion.js";
-import Promotion from "../src/promotion/promotion.js";
-import HalfPricePromotion from "../src/promotion/half-price-promotion.js";
-import OverMinusPromotion from "../src/promotion/over-minus-promotion.js";
-import Order from "../src/order.js";
+import BestPromotion from '../src/promotion/best-promotion.js';
+import Promotion from '../src/promotion/promotion.js';
+import HalfPricePromotion from '../src/promotion/half-price-promotion.js';
+import OverMinusPromotion from '../src/promotion/over-minus-promotion.js';
+import Order from '../src/order.js';
 
-describe("Take out food", function() {
-  it("should discout 0￥ when input dishes", () => {
-    const inputs = new Map([["ITEM0013", 4]]);
+describe('Take out food', () => {
+  it('should discout 0￥ when input dishes', () => {
+    const inputs = new Map([['ITEM0013', 4]]);
     const order = new Order(inputs);
     const bestPromotion = new BestPromotion(order).getBestPromotion();
     expect(true).toEqual(bestPromotion instanceof Promotion);
@@ -17,11 +17,11 @@ describe("Take out food", function() {
     expect(null).toEqual(bestPromotion.type);
   });
 
-  it("should return discout price that half price of specific dishes when input dishes", () => {
+  it('should return discout price that half price of specific dishes when input dishes', () => {
     const inputs = new Map([
-      ["ITEM0001", 1],
-      ["ITEM0013", 2],
-      ["ITEM0022", 1]
+      ['ITEM0001', 1],
+      ['ITEM0013', 2],
+      ['ITEM0022', 1]
     ]);
     const order = new Order(inputs);
     const bestPromotion = new BestPromotion(order).getBestPromotion();
@@ -30,14 +30,14 @@ describe("Take out food", function() {
     expect(false).toEqual(bestPromotion instanceof OverMinusPromotion);
     expect(13).toEqual(bestPromotion.discount());
     expect(25).toEqual(bestPromotion.totalPrice());
-    expect("指定菜品半价").toEqual(bestPromotion.type);
+    expect('指定菜品半价').toEqual(bestPromotion.type);
     expect(2).toEqual(bestPromotion.includedHalfPriceDishes().length);
   });
 
-  it("should return discout price that over 30￥ minus 6￥ when input dishes", () => {
+  it('should return discout price that over 30￥ minus 6￥ when input dishes', () => {
     const inputs = new Map([
-      ["ITEM0013", 4],
-      ["ITEM0022", 1]
+      ['ITEM0013', 4],
+      ['ITEM0022', 1]
     ]);
     const order = new Order(inputs);
     const bestPromotion = new BestPromotion(order).getBestPromotion();
@@ -46,6 +46,6 @@ describe("Take out food", function() {
     expect(true).toEqual(bestPromotion instanceof OverMinusPromotion);
     expect(6).toEqual(bestPromotion.discount());
     expect(26).toEqual(bestPromotion.totalPrice());
-    expect("满30减6元").toEqual(bestPromotion.type);
+    expect('满30减6元').toEqual(bestPromotion.type);
   });
 });

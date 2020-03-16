@@ -1,6 +1,6 @@
-import Promotion from "./promotion.js";
-import HalfPricePromotion from "./half-price-promotion.js";
-import OverMinusPromotion from "./over-minus-promotion.js";
+import Promotion from './promotion.js';
+import HalfPricePromotion from './half-price-promotion.js';
+import OverMinusPromotion from './over-minus-promotion.js';
 
 class BestPromotion {
   constructor(order) {
