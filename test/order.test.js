@@ -13,7 +13,7 @@ describe('Take out food', () => {
       { id: 'ITEM0022', name: '凉皮', price: 8.0, count: 1 }
     ];
     const order = new Order(inputs);
-    const result = order.itemDetails;
+    const result = order.itemsDetails;
     expect(orderDetails).toEqual(result);
   });
 
